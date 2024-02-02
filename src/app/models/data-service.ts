@@ -20,10 +20,11 @@ export class DataService {
       );
   }
 
-  getMembers(): Observable<Member[]> {
+  getMembersByArea(area: string): Observable<Member[]> {
+    console.log('Llamando a getMembersByArea con área:', area);
     return this.http.get<any>(`${this.baseUrl}/area/member/?format=json`)
       .pipe(
-        map(response => response.data)
+        map(response => response.data.filter((member: Member) => member.area_member === area))
       );
   }
 }

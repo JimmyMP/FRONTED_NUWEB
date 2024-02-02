@@ -2,10 +2,10 @@
     <div class="member" *ngFor="let member of members; let i = index">
         <div data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" class="perfil">
             <div class="perfil_imagen-container">
-                <img class="perfil_imagen" src={{member.photo}} alt="Profile Image">
+                <img class="perfil_imagen" [src]="member.photo" alt="Profile Image">
             </div>
             <div class="job_title">
-                <h3>{{member.position}}</h3>
+                <h3>{{ member.position | titlecase }}</h3>
             </div>
         </div>
         
@@ -15,30 +15,30 @@
                     <div class="header">
                         <div class="perfil">
                             <div class="perfil_imagen-container">
-                                <img class="perfil_imagen" src={{member.photo}} alt="Profile Image" >
+                                <img class="perfil_imagen" [src]="member.photo" alt="Profile Image" >
                             </div>
-                            <div  class="job_title">
-                                <h3>{{member.position}}</h3>
+                            <div class="job_title">
+                                <h3>{{ member.position | titlecase }}</h3>
                             </div>
                         </div>
                         <div class="icons">
                             <img src="./assets/images/nucleo.jpeg" alt="">
                             <div class="social">
-                                <a href="{{ member.social_network.linkedin }}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                <a *ngIf="member.social_network?.linkedin" [href]="member.social_network.linkedin" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
                                 <i class="fa-brands fa-github"></i>
-                                <a href="{{ member.social_network.facebook }}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                <a *ngIf="member.social_network?.facebook" [href]="member.social_network.facebook" target="_blank">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                     <div class="modal-body">
-                        <h4>{{member.name}}</h4>
+                        <h4>{{ member.name | titlecase }}</h4>
                         <hr>
-                        <p>
-                            {{member.info}}
-                        </p>
-                        <p>
-                            {{member.area_member}}
-                        </p>
+                        <p>{{ member.info  | titlecase}}</p>
+                        <p>{{ member.area_member | uppercase }}</p>
                     </div>
                     <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
                 </div>
@@ -46,4 +46,3 @@
         </div>
     </div>
 </section>
-
