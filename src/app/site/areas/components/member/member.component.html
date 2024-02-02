@@ -1,0 +1,49 @@
+<section class="member-section">
+    <div class="member" *ngFor="let member of members; let i = index">
+        <div data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" class="perfil">
+            <div class="perfil_imagen-container">
+                <img class="perfil_imagen" src={{member.photo}} alt="Profile Image">
+            </div>
+            <div class="job_title">
+                <h3>{{member.position}}</h3>
+            </div>
+        </div>
+        
+        <div class="modal fade" [attr.id]="'exampleModal' + i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="header">
+                        <div class="perfil">
+                            <div class="perfil_imagen-container">
+                                <img class="perfil_imagen" src={{member.photo}} alt="Profile Image" >
+                            </div>
+                            <div  class="job_title">
+                                <h3>{{member.position}}</h3>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <img src="./assets/images/nucleo.jpeg" alt="">
+                            <div class="social">
+                                <a href="{{ member.social_network.linkedin }}" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                <i class="fa-brands fa-github"></i>
+                                <a href="{{ member.social_network.facebook }}" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <h4>{{member.name}}</h4>
+                        <hr>
+                        <p>
+                            {{member.info}}
+                        </p>
+                        <p>
+                            {{member.area_member}}
+                        </p>
+                    </div>
+                    <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

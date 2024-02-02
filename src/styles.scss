@@ -1,0 +1,107 @@
+/* styles.scss o styles.css */
+@import "../node_modules/primeng/resources/themes/md-light-indigo/theme.css";
+@import 'primeng/resources/primeng.min.css';
+@import 'primeicons/primeicons.css';
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --title-font-size-1: 40px;
+    --title-font-size-2: 32px;
+    --title-font-size-3: 24px;
+    --title-font-size-4: 20px;
+    --text-font-size: 16px;
+
+    --main-color-1: #4a3ca6;
+    --main-color-2: #6657b5;
+    --main-color-3: #8172c5;
+    --main-color-4: #8172c5;
+    --main-color-5: #b5abe2;
+    --main-color-6: #cfc8f0;
+    --main-color-7: #f3f2ff;
+    --secondary-color-1: #283593;
+    --secondary-color-2: #4a53a7;
+    --secondary-color-3: #6972ba;
+    --secondary-color-4: #8992cc;
+    --secondary-color-5: #aab2de;
+    --secondary-color-6: #cdd3ef;
+    --secondary-color-7: #f2f5ff;
+    --dark-color-1: #212121;
+    --dark-color-2: #3e3e3e;
+    --dark-color-3: #5d5d5d;
+    --dark-color-4: #7f7f7f;
+    --dark-color-5: #a2a2a2;
+    --dark-color-6: #c6c6c6;
+    --dark-color-7: #ececec;
+    --opacity-main-color-80: rgba(49, 27, 146, 0.8);
+    --opacity-main-color-60: rgba(49, 27, 146, 0.6);
+    --opacity-main-color-50: rgba(49, 27, 146, 0.5);
+    --opacity-main-color-20: rgba(49, 27, 146, 0.2);
+    --opacity-main-color-10: rgba(49, 27, 146, 0.1);
+    --shadow-main-color-1: 0 4px 6px rgba(33, 33 33, 0.5);
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    /*strategies*/
+    --card-strategies: #e8eaf6;
+    --h2-strategies: #3B1B75;
+    --circule-strategies: #1A237E;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif, Verdana, 'Segoe UI', Tahoma;
+}
+
+h1 {
+    font-size: var(--title-font-size-1);
+}
+
+h2 {
+    font-size: var(--title-font-size-2);
+}
+
+h3 {
+    font-size: var(--title-font-size-3);
+}
+
+h4 {
+    font-size: var(--title-font-size-4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--main-color-1);
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+p,
+ul,
+li,
+ol,
+a,
+span,
+label,
+i {
+    font-size: var(--text-font-size);
+    font-weight: 500;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--main-color-7);
+}

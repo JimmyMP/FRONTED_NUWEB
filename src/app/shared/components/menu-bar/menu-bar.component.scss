@@ -1,0 +1,31 @@
+.navbar-brand{
+    color: #4A3CA6;
+    font-weight: 700;
+}
+.navbar-nav{
+    font-weight: 700;
+    a, p{
+        color: var(--main-color-1);
+
+    }
+    .nav-link {
+        transition: border-bottom 0.3s ease-in;
+    }
+}
+hr{
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.submenu_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.navbar-collapse .nav-area:active{
+    background-color: var(--main-color-5);
+    color: var(--light-color-4);
+}
+.navbar-nav .nav-active{
+    border-bottom: 3px solid var(--main-color-1);
+}

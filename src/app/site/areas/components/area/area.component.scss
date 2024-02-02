@@ -1,0 +1,16 @@
+.section{
+    // margin-right: 10px;
+}
+.area-nav{
+    z-index: 900;
+    box-shadow: 0 2px 8px var(--dark-color-5);
+    position: sticky;
+    top: 76px;
+}
+
+@media (min-width : 700){
+    .area-content{
+        padding-left: 40px;
+        
+    }
+}

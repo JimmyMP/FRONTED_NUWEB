@@ -1,0 +1,15 @@
+<!-- testimonial-component.html -->
+
+<div *ngFor="let testimonial of testimonials">
+    <h2>{{ testimonial.name }}</h2>
+    <p>{{ testimonial.testimony }}</p>
+    <p>Date: {{ testimonial.date }}</p>
+    <p>Area: {{ testimonial.area }}</p>
+    <p>Period: {{ testimonial.period }}</p>
+    <p>Degree: {{ testimonial.degree }}</p>
+    <p>
+    <a href="{{ testimonial.facebook }}" target="_blank">Facebook</a>
+    <a href="{{ testimonial.linkedin }}" target="_blank">LinkedIn</a>
+    <!-- Agrega más enlaces según sea necesario -->
+    </p>
+</div>

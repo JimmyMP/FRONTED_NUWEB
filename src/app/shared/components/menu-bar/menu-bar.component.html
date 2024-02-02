@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="home">
+            <img src="../../../assets/images/logo-nucleo.png" alt="logo" width="50" height="50">    
+            Nuweb
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item" >
+                    <a  class="nav-link" routerLink="eventos" routerLinkActive="nav-active">EVENTOS</a>
+                </li>
+                <li class="nav-item" >
+                    <a  class="nav-link" routerLink="proyectos" routerLinkActive="nav-active">PROYECTOS</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <p  class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false" style="padding-left: 0;">AREAS</p>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item nav-area" routerLink="areas">NUESTRAS ÁREAS</a></li>
+                        <hr>
+                        <div class="submenu_container " >
+                            <li><a class="dropdown-item nav-area" routerLink="areas/pmo">PMO</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/investigacion">INVESTIGACION</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/industrial">INDUSTRIAL</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/sistemas">SISTEMAS</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/gth">GTH</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/marketing">MARKETING</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/logistica">LOGISTICA</a></li>
+                            <li><a class="dropdown-item nav-area" routerLink="areas/rrpp">RR.PP.</a></li>
+                        </div>
+                        
+                    </ul>
+                </li>
+                <li class="nav-item" >
+                    <a  class="nav-link" routerLink="testimonios"  routerLinkActive="nav-active">TESTIMONIOS</a>
+                </li>
+                <li class="nav-item" >
+                    <a  class="nav-link" routerLink="contactanos"  routerLinkActive="nav-active">CONTÁCTANOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="sobre-nosotros" routerLinkActive="nav-active">SOBRE NOSOTROS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

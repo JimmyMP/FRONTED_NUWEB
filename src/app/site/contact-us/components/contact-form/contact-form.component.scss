@@ -1,0 +1,104 @@
+.contacto-principal {
+    background: var(--main-color-7);
+
+    .formulario {
+        margin: 0 0 2% 5%;
+        font-size: 18px;
+        padding: 30px;
+        background-color: var(--smain-color-7);
+        border-radius: 10px;
+        input{
+            margin-bottom: 2px;
+        }
+
+        .form-label {
+            font-size: var(--text-font-size);
+            font-weight: 500;
+            margin: 0;
+            color:  var(--main-color-1);
+            font-size: bold;
+            margin-top: 15px;
+        }
+
+        .input-padron {
+            display: block;
+            padding: 8px;
+            padding-left: 20px;
+        }
+
+        .form-control {
+            border-radius: 20px;
+        }
+
+        .form-required {
+            color: var(--main-color-1);
+            font-size: var(--text-font-size);
+        }
+
+        .form-condiciones {
+            .form-label {
+                color: var(--main-color-1);
+                font-weight: 500;
+                margin: 0;
+                font-size: var(--text-font-size);
+            } 
+
+            .checkbox {
+                display: block;
+                margin: 5px;
+                font-size:18px;
+            }           
+        }
+        .error-message{
+            color: var(--bs-danger);
+            font-size: 12px;
+        }
+
+        .enviar {
+            background: var(--main-color-1);;
+            color: var(--dark-color-7);
+            font-size: var(--title-font-size-3);
+            font-weight: bold;
+            border: none;
+            padding: 5px 70px;
+            border-radius: 30px;
+            margin-bottom: 10px
+        }
+        .enviar:disabled{
+            background: var(--main-color-5);
+        }
+        .enviar:not(:disabled):active{
+            background: var(--main-color-2);
+        }
+    }
+}
+
+.btn-area{
+    background-color: rgb(64, 20, 118, 0.5);
+    color: #ffffff;
+    margin: 7% 0;
+    border-radius: 0  30px 30px  0;
+}
+
+.btn-area:hover{
+    background-color: rgb(64, 20, 118);
+    color: #ffffff;
+    transform: scale(1.2);
+    transition: transform 0.5s ease-in-out;
+}
+
+act-title {
+    background: #000080;
+    padding:10px ;
+    height: 135px;
+    justify-content: center;
+    align-items: center;
+    color:#FFFFFF;
+    font-size:5em;
+    font-weight:bold;
+    font-family: 'Raleway';
+    font-style: normal;
+    text-align:center;
+    letter-spacing: 0.1em;
+    display:flex;
+}

@@ -1,0 +1,255 @@
+/* Diseño de la tarjeta mision y vision*/
+h1 {
+    font-size: var(--title-font-size-1);
+    color: var(--bs-light);
+    margin-bottom: 50px;
+    text-shadow: var(--shadow-main-color-1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    text-align: justify;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Añadir para que las tarjetas se envuelvan en una nueva línea si no hay suficiente espacio */
+    /* Añadir espacio entre las tarjetas */
+}
+
+.card {
+    background-color: var(--dark-color-7);
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(50% - 20px);
+    /* Ancho para 2 columnas en dispositivos móviles */
+    max-width: 550px;
+    /* Establecer un ancho máximo para mantener el diseño */
+    height: 400px;
+    perspective: 1000px;
+    /* ... (estilos existentes) ... */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* Mantiene la transformación 3D */
+    transition: transform 0.5s;
+    /* Transición suave para el efecto de volteo */
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+    /* Efecto de volteo al pasar el cursor por encima */
+}
+
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    /* Oculta la parte trasera de la tarjeta en la parte delantera */
+}
+
+.card-front {
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-image: url("../../../../../../assets/images/logo-nucleo.png");
+    /* Ajusta la ruta a la ubicación de tu imagen de fondo */
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen para que cubra completamente la tarjeta */
+    background-position: center;
+    /* Centra la imagen en la tarjeta */
+}
+
+.card-front h1 {
+    font-size: var(--title-font-size-1);
+    margin-top: 30px;
+    text-shadow: var(--shadow-main-color-1);
+}
+
+.card-back {
+    //background-color: var(--card-strategies);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transform: rotateY(180deg);
+    /* Inicialmente oculto, girado 180 grados */
+}
+
+.card-back p {
+    margin: 30px;
+    /* Añade un margen alrededor del contenido */
+    font-size: var(--title-font-size-3);
+    color: var(--main-color-1);
+    /* Cambia el color del texto a blanco */
+}
+
+/* Fin de la tarjeta */
+
+/* Diseño para la tarjeta objetivo */
+.goals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Espacio entre el título y la imagen */
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.goals h2 {
+    font-size: var(--title-font-size-1);
+    color: var(--h2-strategies);
+    margin-top: 30px;
+    margin-right: 20px;
+    /* Espacio entre el título y la imagen */
+}
+
+.goals img {
+    max-width: 40px;
+    /* Ajusta el ancho máximo de la imagen */
+    height: auto;
+    margin-top: 30px;
+    /* Alinea la parte superior de la imagen con la del texto */
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card-target {
+    position: relative;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    width: calc(33.33% - 24px);
+    /* Ajuste para 3 columnas, menos el espacio entre ellas */
+}
+
+.icon {
+    left: 50%;
+    /* Centramos horizontalmente respecto al rectángulo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Centramos completamente */
+}
+
+.icon img {
+    /* ... (estilos existentes) ... */
+    max-width: 50%;
+    /* Asegura que la imagen sea responsive dentro del contenedor */
+    height: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--circule-strategies);
+    color: var(--bs-light);
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -30px;
+    /* Ajusta este valor para superponer el círculo sobre el rectángulo */
+}
+
+.number {
+    color: var(--bs-light);
+    font-size: 30px;
+}
+
+.rectangle {
+    width: 100%;
+    height: 300px;
+    background-color: var(--card-strategies);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.rectangle p {
+    margin: 30px;
+    /* Añade un margen alrededor del contenido */
+    font-size: var(--title-font-size-3);
+    color: var(--main-color-1);
+    /* Cambia el color del texto a blanco */
+}
+
+/* Fin de la tarjeta */
+
+/* Diseño responsive */
+@media (max-width: 1200px) {
+    .card-target {
+        width: calc(50% - 20px);
+        /* Ajuste para 2 columnas en dispositivos móviles, con margen entre ellas */
+    }
+
+    .container {
+        padding-right: 0;
+        /* Elimina el espacio derecho para ajustar el contenido */
+        justify-content: center;
+        /* Centra las tarjetas horizontalmente */
+    }
+
+    .card {
+        width: calc(50% - 20px);
+        /* Ajusta el ancho de las tarjetas para 2 columnas en dispositivos móviles */
+        margin: 0 0 20px;
+        /* Añadir espacio inferior entre las tarjetas */
+    }
+}
+
+@media (max-width: 768px) {
+    .card-target {
+        width: 100%;
+        /* Mostrar en 1 columna en dispositivos móviles */
+        margin: 0 0 20px;
+        /* Espaciado inferior entre las tarjetas */
+    }
+}
+
+@media (max-width: 990px) {
+    .container {
+        padding-right: 0;
+        /* Elimina el espacio derecho para ajustar el contenido */
+        justify-content: center;
+        /* Centra las tarjetas horizontalmente */
+    }
+
+    .card {
+        width: 100%;
+        /* Ajusta el ancho de las tarjetas para 2 columnas en dispositivos móviles */
+        margin: 0 0 20px;
+        /* Añadir espacio inferior entre las tarjetas */
+    }
+}
