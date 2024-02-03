@@ -1,7 +1,40 @@
-.projects{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin: 40px 10%;
+.activity-container{
+    .activity{
+        width: 370px;
+        background-color: var(--secondary-color-6);
+        .img-container{
+            width: 370px;
+            height: 217px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .data-container{
+            padding: 10px;
+            display: flex;
+            color: var(--main-color-1);
+            justify-content: space-between;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .btn{
+                border: none;
+                border-radius: 10px;
+                color: var(--bs-light);
+            }
+            .btn-more{
+                background-color: var(--secondary-color-4);
+                font-weight: bold;
+            }
+            .btn-active{
+                background-color: var(--secondary-color-1);
+                
+            }
+        }
+    }
 }

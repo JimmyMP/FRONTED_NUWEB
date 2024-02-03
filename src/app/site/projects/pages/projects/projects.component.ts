@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/models/data-service';// Reemplaza 'tu-ruta-del-servicio' con la ruta correcta de tu servicio
+import { Event } from 'src/app/models/event/event-data';
 import { ActivityData } from 'src/app/models/activity-data.model';
 import { CommonService } from 'src/app/site/services/common.service';
 
@@ -7,7 +10,23 @@ import { CommonService } from 'src/app/site/services/common.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  events: Event[] = [];
+  constructor(private router: Router, private dataService: DataService){}
+
+  ngOnInit() {
+    console.log('ngOnInit member ejecutado');
+    this.getEvents();
+  }
+  getEvents(): void {
+    this.dataService
+      .getProjects() // Ajusta según cómo obtienes el área desde la URL
+      .subscribe(events => {
+        this.events = events;
+        console.log(this.events);
+      });
+  }
+
   // fecha = new Date ('2023-11-24')
   // opcionesDeFormato: any = {
   //   year: 'numeric',
@@ -16,7 +35,7 @@ export class ProjectsComponent {
   //   timeZone: 'America/Lima' // Zona horaria de Lima, Perú
   // };
   // fechaLocal = this.fecha.toLocaleString('es-PE', this.opcionesDeFormato);
-  projects: ActivityData[] = [
+  // projects: ActivityData[] = [
     // {
     //   imageUrl: './assets/images/activity.jpg',
     //   title: 'Titulito',
@@ -52,7 +71,7 @@ export class ProjectsComponent {
     //   date: new Date(2023, 10, 24),
     //   status: 'Activo'
     // },
-  ]
+  // ]
   // project: ActivityData = {
   //   imageUrl: './assets/images/activity.jpg',
   //   title: 'Titulito',
@@ -61,26 +80,26 @@ export class ProjectsComponent {
   //   status: 'Activo'
   // };
   // date: new Date ('2023-11-24'),
-  projectsPath: string = '/activity/activities/'
-  constructor(private commonService: CommonService){
-    this.getProjects()
-  }
-  getProjects(){
-    this.commonService.getAll(this.projectsPath).subscribe({
-      next: res => {
-        let project: ActivityData
+  // projectsPath: string = '/activity/activities/'
+  // constructor(private commonService: CommonService){
+  //   this.getProjects()
+  // }
+  // getProjects(){
+  //   this.commonService.getAll(this.projectsPath).subscribe({
+  //     next: res => {
+  //       let project: ActivityData
 
-        res.data.forEach( (element: any) => {
-          project = {
-            Coach : "Jhan",
-            date : new Date(element.start_date),
-            imageUrl : 'https://plushlamour.com.ar/wp-content/uploads/2021/04/Imagen-personal-768x512.jpg',
-            status : "Activo",
-            title : element.name,
-          }
-          this.projects.push(project)
-        });
-      }
-    })
-  }
+  //       res.data.forEach( (element: any) => {
+  //         project = {
+  //           Coach : "Jhan",
+  //           date : new Date(element.start_date),
+  //           imageUrl : 'https://plushlamour.com.ar/wp-content/uploads/2021/04/Imagen-personal-768x512.jpg',
+  //           status : "Activo",
+  //           title : element.name,
+  //         }
+  //         this.projects.push(project)
+  //       });
+  //     }
+  //   })
+  // }
 }

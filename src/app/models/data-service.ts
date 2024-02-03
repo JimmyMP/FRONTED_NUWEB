@@ -29,16 +29,14 @@ export class DataService {
       );
   }
 
-  getEvents(area: string): Observable<Event[]> {
-    console.log('Llamando a getMembersByArea con área:', area);
+  getEvents(): Observable<Event[]> {
     return this.http.get<any>(`${this.baseUrl}/activity/eventos/?format=json`)
       .pipe(
         map(response => response.data.filter((event: Event) => event.is_event === true))
       );
   }
 
-  getProjects(area: string): Observable<Event[]> {
-    console.log('Llamando a getMembersByArea con área:', area);
+  getProjects(): Observable<Event[]> {
     return this.http.get<any>(`${this.baseUrl}/activity/eventos/?format=json`)
       .pipe(
         map(response => response.data.filter((event: Event) => event.is_event === false))

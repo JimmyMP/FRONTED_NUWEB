@@ -1,6 +1,11 @@
-<div class="projects">
+<section class="activity-container">
+    <div class="activity" *ngFor="let event of events">
+        <app-activity [event]="event"></app-activity>
+    </div>
+</section>
+<!-- <div class="projects">
     <app-activity *ngFor="let pro of projects"></app-activity>
 </div>
 <div>
     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, eos?
-</div>
+</div> -->
