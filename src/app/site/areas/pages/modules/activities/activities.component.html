@@ -1,1 +1,5 @@
-<app-activity></app-activity>
+<section class="activity-container">
+    <div class="activity" *ngFor="let event of events">
+        <app-activity [event]="event"></app-activity>
+    </div>
+</section>

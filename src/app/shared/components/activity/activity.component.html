@@ -1,20 +1,17 @@
-<section class="activity-container">
-    <div class="activity" *ngFor="let event of events">
-        <div class="img-container">
-            <img src="./assets/images/activity.jpg" alt="">
+    <div class="img-container">
+        <img src="./assets/images/activity.jpg" alt="">
 
+    </div>
+    <div class="data-container">
+        <div class="data">
+            <p class="data">{{event.type_event}}</p>
+            <p class="data">{{event.name}}</p>
+            <p class="data date"><i class="fa-solid fa-calendar-days"></i>{{event.start_date}}</p>
         </div>
-        <div class="data-container">
-            <div class="data">
-                <p class="data">{{event.type_event}}</p>
-                <p class="data">{{event.name}}</p>
-                <p class="data date"><i class="fa-solid fa-calendar-days"></i>{{event.start_date}}</p>
-            </div>
-            <div class="buttons">
-                <a class="btn btn-more" routerLink="activity" >Ver más</a>
-                <p class="btn btn-active">Activo</p>
-            </div>
+        <div class="buttons">
+            <a class="btn btn-more" routerLink="activity" >Ver más</a>
+            <p class="btn btn-active">Activo</p>
         </div>
     </div>
-</section>
+
 
