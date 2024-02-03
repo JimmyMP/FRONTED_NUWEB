@@ -1,38 +1,18 @@
 <section class="activity-container">
-    <div class="activity">
+    <div class="activity" *ngFor="let event of events">
         <div class="img-container">
             <img src="./assets/images/activity.jpg" alt="">
 
         </div>
         <div class="data-container">
             <div class="data">
-                <p class="data">Evento - Webinar</p>
-                <p class="data">Jonatan Chino</p>
-                <p class="data date"><i class="fa-solid fa-calendar-days"></i> 17/08/2023</p>
+                <p class="data">{{event.type_event}}</p>
+                <p class="data">{{event.name}}</p>
+                <p class="data date"><i class="fa-solid fa-calendar-days"></i>{{event.start_date}}</p>
             </div>
             <div class="buttons">
                 <a class="btn btn-more" routerLink="activity" >Ver más</a>
                 <p class="btn btn-active">Activo</p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="activity">
-        <div class="img-container">
-            <img [src]="activityData?.imageUrl" alt="">
-
-        </div>
-        <div class="data-container">
-            <div class="data">
-                <h4 class="data">{{activityData?.title}}</h4>
-                <p class="data">{{activityData?.Coach}}</p>
-                <p class="data date"><i class="fa-solid fa-calendar-days"></i> {{activityData?.date | date: 'dd/MM/yyyy'}}</p>
-            </div>
-            <div class="buttons">
-                <a class="btn btn-more" routerLink="activity" >Ver más</a>
-                <p class="btn btn-active">{{activityData?.status}}</p>
             </div>
         </div>
     </div>

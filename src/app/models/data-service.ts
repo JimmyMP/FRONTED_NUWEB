@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { Testimonial } from "./testimonial/testimonial-data";
 import { Member } from "./member/member-data";
+import { Event } from "./event/event-data";
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +26,30 @@ export class DataService {
     return this.http.get<any>(`${this.baseUrl}/area/member/?format=json`)
       .pipe(
         map(response => response.data.filter((member: Member) => member.area_member === area))
+      );
+  }
+
+  getEvents(area: string): Observable<Event[]> {
+    console.log('Llamando a getMembersByArea con área:', area);
+    return this.http.get<any>(`${this.baseUrl}/activity/eventos/?format=json`)
+      .pipe(
+        map(response => response.data.filter((event: Event) => event.is_event === true))
+      );
+  }
+
+  getProjects(area: string): Observable<Event[]> {
+    console.log('Llamando a getMembersByArea con área:', area);
+    return this.http.get<any>(`${this.baseUrl}/activity/eventos/?format=json`)
+      .pipe(
+        map(response => response.data.filter((event: Event) => event.is_event === false))
+      );
+  }
+
+  getEventsByArea(area: string): Observable<Event[]> {
+    console.log('Llamando a getMembersByArea con área:', area);
+    return this.http.get<any>(`${this.baseUrl}/activity/eventos/?format=json`)
+      .pipe(
+        map(response => response.data.filter((event: Event) => event.project_area.includes(area)))
       );
   }
 }

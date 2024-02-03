@@ -2,7 +2,8 @@
     <div class="member" *ngFor="let member of members; let i = index">
         <div data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" class="perfil">
             <div class="perfil_imagen-container">
-                <img class="perfil_imagen" [src]="member.photo" alt="Profile Image">
+                <img class="perfil_imagen" [src]="member.photo"
+                alt="Profile Image">
             </div>
             <div class="job_title">
                 <h3>{{ member.position | titlecase }}</h3>
