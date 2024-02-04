@@ -1,17 +1,83 @@
-    <div class="img-container">
-        <img src="./assets/images/activity.jpg" alt="">
-
+<div class="img-container">
+    <img src="./assets/images/activity.jpg" alt="">
+</div>
+<div class="data-container">
+    <div class="data">
+        <p class="data">{{event.type_event}}</p>
+        <p class="data">{{event.name}}</p>
+        <p class="data date"><i class="fa-solid fa-calendar-days"></i>{{event.start_date}}</p>
     </div>
-    <div class="data-container">
-        <div class="data">
-            <p class="data">{{event.type_event}}</p>
-            <p class="data">{{event.name}}</p>
-            <p class="data date"><i class="fa-solid fa-calendar-days"></i>{{event.start_date}}</p>
-        </div>
-        <div class="buttons">
-            <a class="btn btn-more" routerLink="activity" >Ver más</a>
-            <p class="btn btn-active">Activo</p>
+    <div class="buttons">
+        <a class="btn btn-more" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+ event.name">Ver más</a>
+        <p class="btn btn-active">Activo</p>
+    </div>
+</div>
+<div class="modal fade"  [attr.id]="'exampleModal'+ event.name" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="img-event-container">
+                <img src="./assets/images/activity.jpg" alt="evento">
+            </div>
+            <div class="event-body">
+                <div class="event">
+                    <div class="description card">
+                        <h5 class="card-header">DESCRIPCIÓN</h5>
+                        <div class="card-body">
+                            {{event.description}}
+                        </div>
+                        <div class="card-footer text-muted">
+                            {{event.start_date}}
+                        </div>
+                    </div>
+                    <div class="sponsor-container">
+                        <div class="sponsor card">
+                            <h5 class="card-header">SPONSORS</h5>
+                            <div class="card-body">
+                                {{event.sponsors}}
+                            </div>
+                        </div>
+                        <div class="social card">
+                            <h5 class="card-header">REDES SOCIALES</h5>
+                            <div class="card-body">
+                                <a *ngIf="event.social_network?.linkedin" [href]="event.social_network.linkedin" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a *ngIf="event.social_network?.facebook" [href]="event.social_network.facebook" target="_blank">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <!-- <i class="fa-brands fa-twitter"></i>
+                                <i class="fa-brands fa-whatsapp"></i> -->
+                                <!-- <i class="fa-brands fa-instagram"></i> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration">
+                    <P>¿Estas interesado en participar?</P>
+                    <a [attr.href]="event.registration_link" target="_blank">
+                        <button>Inscribirse</button>
+                    </a>
+                </div>
+                <div class="projection">
+                    <div class="objectives card">
+                        <h5 class="card-header">OBJETIVOS</h5>
+                        <div class="card-body">
+                            {{event.targets}}
+                        </div>
+                    </div>
+                    <div class="expectations card">
+                        <h5 class="card-header">ESPECTATIVAS</h5>
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nobis assumenda tempora in explicabo nam voluptatibus delectus dicta ratione culpa expedita, ullam aut amet, possimus, ab autem hic iste perferendis.
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="close">
+                <button type="button" class="btn" data-bs-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
+</div>
 
 

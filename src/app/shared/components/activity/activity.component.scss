@@ -1,35 +1,140 @@
 
-        .img-container{
-            width: 370px;
-            height: 217px;
-            overflow: hidden;
-            img{
+.img-container{
+    width: 370px;
+    height: 217px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.data-container{
+    padding: 10px;
+    display: flex;
+    color: var(--main-color-1);
+    justify-content: space-between;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .btn{
+        border: none;
+        border-radius: 10px;
+        color: var(--bs-light);
+    }
+    .btn-more{
+        background-color: var(--secondary-color-4);
+        font-weight: bold;
+    }
+    .btn-active{
+        background-color: var(--secondary-color-1);
+        
+    }
+}
+.modal{
+    .modal-dialog{
+        display: flex;
+        align-content: center;
+        .modal-content{
+            width:max-content;
+            .img-event-container{
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                height: 50vw;
+                max-height: 400px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .event-body{
+                margin: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                .card-header{
+                    color: var(--main-color-1);
+                    background-color: var(--opacity-main-color-10);
+                    text-align: center;
+                }
+                .card-footer{
+                    background-color: var(--opacity-main-color-20);
+                }
+                .card-body{
+                    background: var(--main-color-3);
+                    color: var(--bs-light);
+                    text-align: justify;
+                }
+                .event, .projection, .sponsor-container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+                .social{
+                    width: 100%;
+                    .card-body{
+                        display: flex;
+                        justify-content: space-around;
+                        i{
+                            font-size: 40px;
+                        }
+                    }
+                }
+                .registration{
+                    width: 100%;
+                    text-align: center;
+                    color: var(--main-color-1);
+                    button{
+                        color: var(--bs-light);
+                        padding: 7px 10px;
+                        background: var(--main-color-2);
+                        border: none;
+                        border-radius: 50vh;
+                        width: 200px;
+                        box-shadow: 1px 2px 4px var(--main-color-3);
+                    }
+                    button:active{
+                        box-shadow: none;
+                        font-weight: bold;
+                    }
+                }
+                @media (min-width: 600px){
+                    .card-body{
+                        display: flex;
+                        align-items: center;
+                    }
+                    .description{
+                        width: calc(60% - 20px);
+                    }
+                    .sponsor-container{
+                        width: 40%;
+                    }
+                    .objectives, .expectations{
+                        width: calc(50% - 10px);
+                    }
+                }
+            }
+            .close{
+                width: 100%;
+                text-align: center;
+                color: var(--main-color-1);
+                button{
+                    color: var(--bs-light);
+                    padding: 7px 10px;
+                    background: var(--main-color-2);
+                    border: none;
+                    border-radius: 50vh;
+                    width: 200px;
+                    box-shadow: 1px 2px 4px var(--main-color-3);
+                }
+                button:active{
+                    box-shadow: none;
+                    font-weight: bold;
+                }
             }
         }
-        .data-container{
-            padding: 10px;
-            display: flex;
-            color: var(--main-color-1);
-            justify-content: space-between;
-        }
-        .buttons{
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            .btn{
-                border: none;
-                border-radius: 10px;
-                color: var(--bs-light);
-            }
-            .btn-more{
-                background-color: var(--secondary-color-4);
-                font-weight: bold;
-            }
-            .btn-active{
-                background-color: var(--secondary-color-1);
-                
-            }
-        }
+    }
+}
