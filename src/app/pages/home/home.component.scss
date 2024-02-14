@@ -1,0 +1,71 @@
+.img-container{
+    overflow: hidden;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.header-container{
+    position: relative;
+    margin-bottom: 20px;
+    .header-img{
+        height: 400px;
+        width: 100%;
+        filter:opacity(50%)
+    }
+    h1{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--bs-light);
+        width: 100%;
+        text-align: center;
+    }
+
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-column,
+.main-column,
+.right-column {
+    flex-grow: 1;
+}
+
+.left-column {
+    /* Estilos para la columna izquierda */
+}
+
+.main-column {
+    /* Estilos para la columna principal */
+}
+
+.right-column {
+    /* Estilos para la columna derecha */
+}
+
+@media (min-width: 768px) {
+    .container {
+        /* Establecer el diseño de tres columnas en dispositivos de escritorio */
+    }
+
+    .left-column,
+    .right-column {
+        flex-basis: 300px; /* Ancho fijo para las columnas laterales */
+    }
+
+    .main-column {
+        flex-grow: 2; /* Hacer que la columna principal sea más grande */
+    }
+}
+
+@media (max-width: 767px) {
+    /* Estilos para dispositivos móviles */
+    .left-column,
+    .right-column {
+        display: none; /* Ocultar las columnas laterales en dispositivos móviles */
+    }
+}
