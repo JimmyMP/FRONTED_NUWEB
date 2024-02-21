@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { Testimonial } from "./testimonial/testimonial-data";
 import { Member } from "./member/member-data";
-import { Event } from "./event/event-data";
+import { Event,Sponsor} from "./event/event-data";
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +29,13 @@ export class DataService {
       );
   }
 
+  getSponsor(): Observable<Sponsor[]> {
+    return this.http.get<any>(`${this.baseUrl}/activity/patrocinadores/?format=json`)
+      .pipe(
+        map(response => response.data)
+      );
+  }
+  
   getEvents(): Observable<Event[]> {
     return this.http.get<any>(`${this.baseUrl}/activity/eventos/?format=json`)
       .pipe(

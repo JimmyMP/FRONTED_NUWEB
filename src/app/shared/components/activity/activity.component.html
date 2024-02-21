@@ -1,11 +1,12 @@
 <div class="img-container">
-    <img src="./assets/images/activity.jpg" alt="">
+    <img src="{{event.image}}" alt="">
 </div>
 <div class="data-container">
     <div class="data">
-        <p class="data">{{event.type_event}}</p>
-        <p class="data">{{event.name}}</p>
-        <p class="data date"><i class="fa-solid fa-calendar-days"></i>{{event.start_date}}</p>
+        <p class="data">{{event.type_event  | titlecase }}</p>
+        <p class="data">{{event.name  | titlecase }}</p>
+        <br>
+        <p class="data date"><i class="fa-solid fa-calendar-days"></i> {{event.start_date}}</p>
     </div>
     <div class="buttons">
         <a class="btn btn-more" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+ event.name">Ver más</a>
@@ -16,7 +17,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="img-event-container">
-                <img src="./assets/images/activity.jpg" alt="evento">
+                <img src="{{event.image}}" alt="evento">
             </div>
             <div class="event-body">
                 <div class="event">
@@ -33,7 +34,11 @@
                         <div class="sponsor card">
                             <h5 class="card-header">SPONSORS</h5>
                             <div class="card-body">
-                                {{event.sponsors}}
+                                <div class="sponsors" *ngFor="let sponsor of sponsors">
+                                    <div class="sponsorimg">
+                                        <img [src]="sponsor.logo" alt="{{ sponsor.name }}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="social card">
@@ -66,7 +71,7 @@
                         </div>
                     </div>
                     <div class="expectations card">
-                        <h5 class="card-header">ESPECTATIVAS</h5>
+                        <h5 class="card-header">EXPECTATIVAS</h5>
                         <div class="card-body">
                             {{event.targets}}
                         </div>

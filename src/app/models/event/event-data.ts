@@ -6,7 +6,7 @@ export class Event {
     description: string = "";
     targets: string = "";
     registration_link: string = "";
-    sponsors: string[] = [];
+    sponsors: string[]=[];
     social_network: {
         facebook: string | null;
         linkedin: string | null;
@@ -19,4 +19,8 @@ export class Event {
     project_area: string[] = [];
     image: string = "";
     is_event: boolean = true;
+}
+export class Sponsor{
+    name: string = "";
+    logo: string = "";
 }
