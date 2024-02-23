@@ -61,21 +61,23 @@
             font-size: 18px; /* El tamaño del testimonio se ajustará automáticamente */
             font-weight: normal;
             text-align: center;
+            overflow: hidden; /* Oculta el texto que excede el tamaño del contenedor */
+            text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al texto que excede */
         }
     }
 }
-
 .testimonial-links {
     display: flex;
-    justify-content: flex-end; /* Los enlaces estarán alineados a la derecha */
+    justify-content: flex-start; /* Los enlaces estarán alineados a la derecha */
+    margin-left: 20px;
+    margin-top: 20px;
+    width: max-content;
+    i{
+        font-size: 30px;
+    }
 }
-
 .testimonial-links a {
     color: white;
     text-decoration: none;
     margin-left: 10px; /* Espacio entre los enlaces */
-}
-
-.testimonial-links a:last-child {
-    margin-right: 0; /* Eliminar el margen derecho del último enlace */
 }
