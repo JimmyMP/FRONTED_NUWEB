@@ -1,0 +1,35 @@
+.testimonial-header {
+    width: 100%;
+    background-color: #283593;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.testimonial-header h1 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    font-size: 3vw; /* Tamaño del texto en relación con el ancho de la ventana */
+}
+.testimonial-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    .testimonial{
+    }
+}
+/* Media query para ajustar el tamaño de fuente en pantallas más pequeñas */
+@media screen and (min-width: 1000px) {
+    .testimonial-header h1 {
+        font-size: 30px; /* Tamaño fijo para pantallas más pequeñas */
+    }
+}
+
+/* Media query para ajustar el tamaño de fuente en pantallas muy pequeñas */
+@media screen and (max-width: 600px) {
+    .testimonial-header h1 {
+        font-size: 20px; /* Tamaño fijo más pequeño para pantallas muy pequeñas */
+    }
+}

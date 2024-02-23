@@ -1,0 +1,81 @@
+.testimonial {
+    width: 600px; /* Tamaño fijo para la tarjeta de testimonio */
+    height: 300px; /* Tamaño fijo para la tarjeta de testimonio */
+    background-color: #3b1b75;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.testimonial-date {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.testimonial-divider {
+    border-bottom: 2px solid white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.testimonial-container{
+    display: flex;
+    .testimonial-image {
+        width: 200px; /* Tamaño fijo para la imagen */
+        height: 200px; /* Tamaño fijo para la imagen */
+        border: 2px solid #9896d6;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: 15px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .testimonial-content {
+        width: 400px; /* Tamaño fijo para la imagen */
+        height: 200px; /* Tamaño fijo para la imagen */
+        h2{
+            color: white !important;
+        }
+        color: white;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px; /* Espacio entre la imagen y el contenido */
+        .testimonial-name {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info {
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+        
+        .testimonial-testimony {
+            font-size: 18px; /* El tamaño del testimonio se ajustará automáticamente */
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+}
+
+.testimonial-links {
+    display: flex;
+    justify-content: flex-end; /* Los enlaces estarán alineados a la derecha */
+}
+
+.testimonial-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px; /* Espacio entre los enlaces */
+}
+
+.testimonial-links a:last-child {
+    margin-right: 0; /* Eliminar el margen derecho del último enlace */
+}
