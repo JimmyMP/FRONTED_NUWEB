@@ -81,3 +81,144 @@
     text-decoration: none;
     margin-left: 10px; /* Espacio entre los enlaces */
 }
+.modal{
+    .modal-dialog{
+        display: flex;
+        align-content: center;
+        --bs-modal-width:650px !important; 
+        .modal-content{
+            width: max-content;
+            background-color: #af9be7 !important;
+            .img-event-container{
+                width: 100%;
+                height: 50vw;
+                max-height: 400px;
+                overflow: hidden;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .testimonial-header{
+                display: flex;
+                justify-content: center;
+                .testimonial-name{
+                    color: var(--bs-light);
+                    padding: 7px 10px;
+                    background: #3b1b75;
+                    border: none;
+                    border-radius: 50vh;
+                    box-shadow: 1px 2px 4px var(--main-color-3);
+                }
+            }
+            .event-body{
+                margin: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                .card-header{
+                    color: var(--main-color-1);
+                    background-color: var(--opacity-main-color-10);
+                    text-align: center;
+                    white-space: nowrap;
+                }
+                .card-footer{
+                    background-color: var(--opacity-main-color-20);
+                }
+                .card-body{
+                    background: var(--main-color-3);
+                    color: var(--bs-light);
+                    text-align: justify;
+                    display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        justify-content: center;
+                    .sponsors{
+                        img{
+                            width: 50px; 
+                            height: 50px;
+                            aspect-ratio: auto 50 / 50;
+                            gap:20px;
+                        }
+                    }
+                }
+                .event, .sponsor-container{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center
+                }
+                .social{
+                    width: 100%;
+                    .card-body{
+                        display: flex;
+                        justify-content: space-around;
+                        i{
+                            font-size: 40px;
+                        }
+                    }
+                }
+                .registration{
+                    width: 100%;
+                    text-align: center;
+                    color: var(--main-color-1);
+                    button{
+                        color: var(--bs-light);
+                        padding: 7px 10px;
+                        background: var(--main-color-2);
+                        border: none;
+                        border-radius: 50vh;
+                        width: 200px;
+                        box-shadow: 1px 2px 4px var(--main-color-3);
+                    }
+                    button:active{
+                        box-shadow: none;
+                        font-weight: bold;
+                    }
+                }
+                .projection{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center;
+                    width: 100%;
+                }
+                @media (min-width: 600px){
+                    .card-body{
+                        display: flex;
+                        align-items: center;
+                    }
+                    .description{
+                        width: calc(60% - 20px);
+                    }
+                    .sponsor-container{
+                        width: 40%;
+                    }
+                    .objectives, .expectations{
+                        width: calc(50% - 10px);
+                    }
+                }
+            }
+            .close{
+                height: 45px;
+                text-align: center;
+                color: var(--main-color-1);
+                justify-content: flex-start;
+                button{
+                    color: var(--bs-light);
+                    padding: 7px 10px;
+                    background: var(--main-color-2);
+                    border: none;
+                    border-radius: 50vh;
+                    box-shadow: 1px 2px 4px var(--main-color-3);
+                }
+                button:active{
+                    box-shadow: none;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

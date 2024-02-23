@@ -1,4 +1,4 @@
-<div class="testimonial">
+<a class="testimonial" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal'+ testimonial.id">
     <div class="testimonial-date">{{ testimonial.date }}</div>
     <div class="testimonial-divider"></div>
     <div class="testimonial-container">
@@ -20,5 +20,49 @@
         <a href="{{ testimonial.facebook }}" target="_blank">
             <i class="fa-brands fa-facebook"></i>
         </a>
+    </div>
+</a>
+
+<div class="modal fade"  [attr.id]="'exampleModal'+ testimonial.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="testimonial-header">
+                <div class="close">
+                    <button type="button" class="btn" data-bs-dismiss="modal"><-</button>
+                </div>
+                <div class="testimonial-name">
+                    {{ testimonial.name }}
+                </div>
+            </div>
+            <div class="event-body">
+                <div class="event">
+                    <div class="description card">
+                        <h5 class="card-header">TESTIMONIO</h5>
+                        <div class="card-body">
+                            {{ testimonial.testimony }}
+                        </div>
+                        <div class="card-footer text-muted">
+                            {{testimonial.date}}
+                        </div>
+                    </div>
+                    <div class="sponsor-container">
+                        <div class="social card">
+                            <div class="img-event-container">
+                                <img src="{{ testimonial.other}}" alt="evento">
+                            </div>
+                            <h5 class="card-header">REDES SOCIALES</h5>
+                            <div class="card-body">
+                                <a href="{{ testimonial.linkedin }}" target="_blank">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                                <a href="{{ testimonial.facebook }}" target="_blank">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
