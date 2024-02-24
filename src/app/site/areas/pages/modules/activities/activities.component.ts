@@ -14,7 +14,6 @@ export class ActivitiesComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService){}
 
   ngOnInit() {
-    console.log('ngOnInit member ejecutado');
     this.areaUrl = this.router.url.split('/')[2];
     this.getEvents();
   }

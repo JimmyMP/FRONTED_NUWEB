@@ -12,7 +12,6 @@ export class EventsComponent implements OnInit {
   constructor(private router: Router, private dataService: DataService){}
 
   ngOnInit() {
-    console.log('ngOnInit member ejecutado');
     this.getEvents();
   }
   getEvents(): void {
