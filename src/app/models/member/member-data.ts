@@ -1,4 +1,5 @@
 export class Member {
+    id: number=0;
     name: string = ''; // Valor inicial, podrías asignar el valor que desees
     position: string = '';
     info: string = '';

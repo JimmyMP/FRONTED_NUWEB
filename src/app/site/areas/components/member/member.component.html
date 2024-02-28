@@ -1,6 +1,4 @@
-<section class="member-section">
-    <div class="member" *ngFor="let member of members; let i = index">
-        <div data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" class="perfil">
+        <div data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + member.id" class="perfil">
             <div class="perfil_imagen-container">
                 <img class="perfil_imagen" [src]="member.photo"
                 alt="Profile Image">
@@ -10,7 +8,7 @@
             </div>
         </div>
         
-        <div class="modal fade" [attr.id]="'exampleModal' + i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" [attr.id]="'exampleModal' + member.id" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="header">
@@ -45,5 +43,3 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>

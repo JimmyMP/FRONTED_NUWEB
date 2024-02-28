@@ -19,7 +19,6 @@ export class EventsComponent implements OnInit {
       .getEvents() // Ajusta según cómo obtienes el área desde la URL
       .subscribe(events => {
         this.events = events;
-        console.log(this.events);
       });
   }
 }

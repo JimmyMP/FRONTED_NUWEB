@@ -1,3 +1,5 @@
-<section>
-    <app-member></app-member>
+<section class="member-container">
+    <div class="member" *ngFor="let member of members">
+        <app-member [member]="member"></app-member>
+    </div>
 </section>

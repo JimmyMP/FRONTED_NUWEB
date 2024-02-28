@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/models/data-service';// Reemplaza 'tu-ruta-del-servicio' con la ruta correcta de tu servicio
 import { Member } from 'src/app/models/member/member-data'; // Reemplaza 'tu-ruta-del-modelo' con la ruta correcta de tu modelo
@@ -12,24 +12,20 @@ export class MemberComponent implements OnInit {
 
   // isContactInfoVisible = false;
   // originalMainContent: Node | null = null; // Almacena el contenido original del main
-  areaUrl = ''
-  members: Member[] = [];
+  @Input() member!: Member;
   constructor(private router: Router,private renderer: Renderer2, private el: ElementRef, private dataService: DataService) { }
 
   ngOnInit() {
-    console.log('ngOnInit member ejecutado');
-    this.areaUrl = this.router.url.split('/')[2];
-    this.getMembers();
   }
 
-  getMembers(): void {
-    this.dataService
-      .getMembersByArea(this.areaUrl) // Ajusta según cómo obtienes el área desde la URL
-      .subscribe(members => {
-        this.members = members;
-        console.log(this.members);
-      });
-  }
+  // getMembers(): void {
+  //   this.dataService
+  //     .getMembersByArea(this.areaUrl) // Ajusta según cómo obtienes el área desde la URL
+  //     .subscribe(members => {
+  //       this.members = members;
+  //       console.log(this.members);
+  //     });
+  // }
   // ngAfterViewInit() {
   //   const mainSection = this.el.nativeElement.querySelector('main > div');
   //   const modal = this.el.nativeElement.querySelector('#myModal');

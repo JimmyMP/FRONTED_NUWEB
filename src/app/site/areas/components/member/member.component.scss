@@ -1,78 +1,78 @@
-.member{
-  .perfil{
-    margin-left: auto;
-    margin-right: auto;
+
+.perfil{
+  margin-left: auto;
+  margin-right: auto;
+  width: 183px;
+  .perfil_imagen-container{
+    overflow: hidden;
     width: 183px;
-    .perfil_imagen-container{
-      overflow: hidden;
-      width: 183px;
-      height: 172px;
-      border-top-right-radius: 20px;
-      border-top-left-radius: 20px;
-      .perfil_imagen{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    height: 172px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    .perfil_imagen{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .job_title{
-      width: 183px;
-      background-color: var(--main-color-4);
-      padding: 7px;
-      text-align: center;
-      h3{
-        font-weight: 400;
+  }
+  .job_title{
+    width: 183px;
+    background-color: var(--main-color-4);
+    padding: 7px;
+    text-align: center;
+    h3{
+      font-weight: 400;
+      color: var(--bs-light);
+    }
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+}
+.modal{
+  .modal-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .modal-content{
+      background-color: var(--secondary-color-5);
+      width: 370px;
+      padding: 15px;
+      .header{
+        display: flex;
+        .icons{
+          margin-left: 20px;
+          height: 216px;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .icons img{
+          width: 100px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .icons .social{
+          display: flex;
+          gap: 10px;
+          text-align: center;
+          i{
+            font-size: 40px;
+            color: var(--bs-light);
+          }
+        }
+      }
+      .modal-body{
         color: var(--bs-light);
       }
-      border-bottom-right-radius: 20px;
-      border-bottom-left-radius: 20px;
-    }
-
-  }
-  .modal{
-    .modal-dialog{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      .modal-content{
-        background-color: var(--secondary-color-5);
-        width: 370px;
-        padding: 15px;
-        .header{
-          display: flex;
-          .icons{
-            margin-left: 20px;
-            height: 216px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-          }
-          .icons img{
-            width: 100px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          .icons .social{
-            display: flex;
-            gap: 10px;
-            text-align: center;
-            i{
-              font-size: 40px;
-              color: var(--bs-light);
-            }
-          }
-        }
-        .modal-body{
-          color: var(--bs-light);
-        }
-        .btn{
-          background-color: var(--main-color-4);
-          color: var(--bs-light);
-          box-shadow: 2px 2px 4px var(--bs-light);
-        }
+      .btn{
+        background-color: var(--main-color-4);
+        color: var(--bs-light);
+        box-shadow: 2px 2px 4px var(--bs-light);
       }
     }
   }
 }
+
