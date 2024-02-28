@@ -128,6 +128,8 @@
                     height: 100%;
                     object-fit: cover;
                 }
+                margin-bottom: 20px;
+                border-radius: 10px;
             }
             .testimonial-header{
                 display: flex;
@@ -175,8 +177,8 @@
                     background-color: var(--opacity-main-color-20);
                 }
                 .card-body{
-                    background: var(--main-color-3);
-                    color: var(--bs-light);
+                    background: #ffff;
+                    color:  #3b1b75;
                     text-align: justify;
                     display: flex;
                         flex-wrap: wrap;
@@ -197,11 +199,22 @@
                     gap: 20px;
                     justify-content: center
                 }
+                .sponsor-container{
+                    .card{
+                        --bs-card-bg: #af9be7 !important;
+                        --bs-card-border-width:0 !important;
+                    }
+                }
                 .social{
                     width: 100%;
+                    .card-header{
+                        background-color: #ffff;
+                    }
                     .card-body{
                         display: flex;
-                        justify-content: space-around;
+                        gap:40px;
+                        background: var(--main-color-3);
+                        color: var(--bs-light);
                         i{
                             font-size: 40px;
                         }
