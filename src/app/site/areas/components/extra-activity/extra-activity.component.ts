@@ -1,5 +1,5 @@
 import { Component,Input } from '@angular/core';
-import { Meeting, MeetingImage } from 'src/app/models/meeting/meeting-data';
+import { CombinedMeeting, Meeting, MeetingImage } from 'src/app/models/meeting/meeting-data';
 
 @Component({
   selector: 'app-extra-activity',
@@ -7,6 +7,7 @@ import { Meeting, MeetingImage } from 'src/app/models/meeting/meeting-data';
   styleUrls: ['./extra-activity.component.scss']
 })
 export class ExtraActivityComponent {
-  @Input() meeting!: Meeting;
-  @Input() meetingImage!: MeetingImage;
+  @Input() combinedMeeting!:CombinedMeeting;
+  // @Input() meeting!: Meeting;
+  // @Input() meetingImage!: MeetingImage;
 }

@@ -1,12 +1,12 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Testimonial } from "./testimonial/testimonial-data";
 import { Member } from "./member/member-data";
 import { Event,Sponsor} from "./event/event-data";
-import { Meeting, MeetingImage } from "./meeting/meeting-data";
+import { CombinedMeeting, Meeting, MeetingImage } from "./meeting/meeting-data";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,20 +15,53 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  getMeeting(): Observable<Meeting[]> {
-    return this.http.get<any>(`${this.baseUrl}/area/inicio/?format=json`)
-      .pipe(
-        map(response => response.meeting)
-      );
+  // getMeeting(): Observable<Meeting[]> {
+  //   return this.http.get<any>(`${this.baseUrl}/area/inicio/?format=json`)
+  //     .pipe(
+  //       map(response => response.meeting)
+  //     );
+  // }
+  // getMeetingImage(id_synergy: number): Observable<MeetingImage[]> {
+  //   return this.http.get<any>(`${this.baseUrl}/area/inicio-image/?format=json`)
+  //     .pipe(
+  //       map(response => {
+  //         return response.data.filter((meetingImage: MeetingImage) => meetingImage.id_synergy === id_synergy);
+  //       })
+  //     );
+  // }
+  getCombinedMeetings(): Observable<CombinedMeeting[]> {
+    return forkJoin([
+      this.http.get<any>(`${this.baseUrl}/area/inicio/?format=json`),
+      this.http.get<any>(`${this.baseUrl}/area/inicio-image/?format=json`)
+    ]).pipe(
+      map(responses => {
+        const meetings = responses[0].data;
+        const meetingImages = responses[1].data;
+  
+        // Crear un array para almacenar todas las reuniones combinadas con sus imágenes
+        const combinedMeetings: CombinedMeeting[] = [];
+  
+        // Combinar cada reunión con su imagen correspondiente
+        meetings.forEach((meeting: any) => {
+          const matchingImage = meetingImages.find((image: any) => image.id_synergy === meeting.id);
+          const combinedMeeting = new CombinedMeeting();
+          combinedMeeting.id = meeting.id;
+          combinedMeeting.area = meeting.area;
+          combinedMeeting.meeting = meeting.meeting;
+          combinedMeeting.integration = meeting.integration;
+          combinedMeeting.participation = meeting.participation;
+          combinedMeeting.meeting_Image = matchingImage?.metting_image || '';
+          combinedMeeting.integration_Image = matchingImage?.integration_image || '';
+          combinedMeeting.participation_Image = matchingImage?.participation_image || '';
+          
+          combinedMeetings.push(combinedMeeting);
+        });
+  
+        return combinedMeetings;
+      })
+    );
   }
-  getMeetingImage(id_synergy: number): Observable<MeetingImage[]> {
-    return this.http.get<any>(`${this.baseUrl}/area/inicio-image/?format=json`)
-      .pipe(
-        map(response => {
-          return response.data.filter((meetingImage: MeetingImage) => meetingImage.id_synergy === id_synergy);
-        })
-      );
-  }
+  
 
   getTestimonials(): Observable<Testimonial[]> {
     return this.http.get<any>(`${this.baseUrl}/testimony/?format=json`)

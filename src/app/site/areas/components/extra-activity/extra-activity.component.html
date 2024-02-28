@@ -1,29 +1,29 @@
 <section class="meetings">
-    <div class="card">
+    <div *ngIf="combinedMeeting.meeting || combinedMeeting.meeting_Image" class="card">
         <div class="imagen-container">
-            <img src="{{meetingImage.metting_image}}" class="card-img-top" alt="reunion">
+            <img src="{{combinedMeeting.meeting_Image}}" class="card-img-top" alt="reunion">
         </div>
         <div class="card-body">
             <h3>Reunión</h3>
-            <p class="card-text">{{meeting.meeting}}</p>
+            <p class="card-text">{{combinedMeeting.meeting}}</p>
         </div>
     </div>
-    <div class="card">
+    <div *ngIf="combinedMeeting.integration || combinedMeeting.integration_Image" class="card">
         <div class="card-body">
             <h3>Integración</h3>
-            <p class="card-text">{{meeting.integration}}</p>
+            <p class="card-text">{{combinedMeeting.integration}}</p>
         </div>
         <div class="imagen-container">
-            <img src="{{meetingImage.integration_image}}" class="card-img-top" alt="integracion">
+            <img src="{{combinedMeeting.integration_Image}}" class="card-img-top" alt="integracion">
         </div>
     </div>
-    <div class="card">
+    <div *ngIf="combinedMeeting.participation || combinedMeeting.participation_Image" class="card">
         <div class="imagen-container">
-            <img src="{{meetingImage.participation_image}}" class="card-img-top" alt="participacion">
+            <img src="{{combinedMeeting.participation_Image}}" class="card-img-top" alt="participacion">
         </div>
         <div class="card-body">
             <h3>Participación</h3>
-            <p class="card-text">{{meeting.participation}}</p>
+            <p class="card-text">{{combinedMeeting.participation}}</p>
         </div>
     </div>
 </section>
