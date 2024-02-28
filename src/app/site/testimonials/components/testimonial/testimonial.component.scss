@@ -81,6 +81,36 @@
     text-decoration: none;
     margin-left: 10px; /* Espacio entre los enlaces */
 }
+@media screen and (max-width: 600px) {
+    .testimonial{
+        width: max-content;
+        height: max-content;
+    }
+    .testimonial-container {
+        flex-direction: column; /* Cambiamos la dirección del flexbox a columna */
+        .testimonial-image{
+            margin-right: 15px;
+        }
+        .testimonial-content {
+            height: max-content;
+            width:auto;
+            margin-left: 0;
+            // width: 100%; /* Hacemos que ambos elementos ocupen todo el ancho disponible */
+            margin: 0; /* Quitamos el margen para que ocupen todo el espacio */
+            .testimonial-testimony{
+                display: none;
+            }
+        }
+    }
+    .testimonial-links {
+        width: auto;
+        justify-content: center; /* Centramos los enlaces */
+        margin-left: 0px; /* Reducimos el espacio superior */
+    }
+    .testimonial-links a:first-child{
+        margin-left: 0px;
+    }
+}
 .modal{
     .modal-dialog{
         display: flex;
