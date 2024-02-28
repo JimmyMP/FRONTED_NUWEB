@@ -129,8 +129,19 @@
 .goals-values{
     margin: 20px;
     margin-top: 80px;
-    h3{
+    .goals-values-header{
+        width: 100%;
+        background-color: #283593;
         text-align: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        h3{
+            color: white;
+            font-weight: bold;
+            margin: 0;
+            font-size: 3vw;
+        }
     }
     .cards{
         margin-top: 40px;
@@ -223,8 +234,40 @@
     text-align: center;
     margin: 20px;
     margin-top: 80px;
+    .history-header{
+        width: 100%;
+        background-color: #283593;
+        text-align: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        h3{
+            color: white;
+            font-weight: bold;
+            margin: 0;
+            font-size: 3vw;
+        }
+    }
 }
-
+.organization-chart{
+    text-align: center;
+    margin: 20px;
+    margin-top: 80px;
+    .organization-header{
+        width: 100%;
+        background-color: #283593;
+        text-align: center;
+        padding: 10px 0;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        h3{
+            color: white;
+            font-weight: bold;
+            margin: 0;
+            font-size: 3vw;
+        }
+    }
+}
 
 .statute{
     margin: 20px;
