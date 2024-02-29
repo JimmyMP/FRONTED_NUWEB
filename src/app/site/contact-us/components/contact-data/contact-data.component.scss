@@ -4,11 +4,21 @@
     .mapa {
         margin-top: 5%;
         padding-left: 5%;
-        
     }
     .informacion-contacto {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin:20px;
         margin: 5% 5% 3% 5%;
         text-align: center;
+        .info-ubicanos, .info-telefonia, .info-correo{
+            background: #ffff;
+            width: 400px;
+            height: 120px;
+            border-radius: 15px;
+        }
         .info-principal {
             font-size: var(--title-font-size-2);
             font-weight: 500;

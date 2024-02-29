@@ -1,21 +1,37 @@
 .imagen-contacto {
-    height: 150px;
-    background-color: var(--main-color-1);
-    justify-content: center;
-    align-items: center;
-    img {
+    // height: 150px;
+    // background-color: var(--main-color-1);
+    // justify-content: center;
+    // align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    .header-img{
+        height: 200px;
         width: 100%;
-        height: 100%;
-    }
-
-    h1 {
-        font-weight: bold;
-        font-size: var(--title-font-size-1);
-        color: var(--main-color-7);
-        
     }
 }
-
+.img-container{
+    overflow: hidden;
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.goals-values-header{
+    width: 100%;
+    background-color: #283593;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    h3{
+        color: white;
+        font-weight: bold;
+        margin: 0;
+        font-size: 3vw;
+    }
+}
 .contenido-contacto {
     background-color: var(--main-color-7);
 }
