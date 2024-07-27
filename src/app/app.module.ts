@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 // mock
 //import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { MockDataService } from './services/mock-data.service';
@@ -40,6 +40,7 @@ import { DataService } from './models/data-service';
     MenuBarModule,
     OrganizationChartModule,
     BrowserAnimationsModule,
+    NgxSpinnerModule,
     AccordionModule,
     PanelModule,
     ButtonModule
